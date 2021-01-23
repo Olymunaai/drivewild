@@ -1,0 +1,41 @@
+@keyframes flicker {
+  0% {
+    filter: brightness(30%);
+  }
+  26% {
+    filter: brightness(30%);
+  }
+  27% {
+    filter: brightness(60%);
+  }
+  35% {
+    filter: brightness(30%);
+  }
+  40% {
+    filter: brightness(30%);
+  }
+  41% {
+    filter: brightness(50%);
+  }
+  42% {
+    filter: brightness(30%);
+  }
+  78% {
+    filter: brightness(30%);
+  }
+  79% {
+    filter: brightness(50%);
+  }
+  80% {
+    filter: brightness(30%);
+  }
+  95% {
+    filter: brightness(30%);
+  }
+  96% {
+    filter: brightness(50%);
+  }
+  97% {
+    filter: brightness(30%);
+  }
+}
