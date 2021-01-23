@@ -1,2 +1,181 @@
 @import "../utils/mixins";
 @import "../utils/variables";
+
+.contact {
+  height: fit-content;
+  width: 100%;
+  background-image: linear-gradient(
+      to top left,
+      rgba($color-black, 0.7),
+      rgba($color-black, 0.7)
+    ),
+    url("../../img/parked.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 5rem;
+
+  @include media-max(700px) {
+    padding: 3rem;
+  }
+
+  &__title {
+    color: $color-primary;
+  }
+
+  &__card {
+    margin: 5rem auto;
+    display: flex;
+    // align-items: center;
+    height: 45rem;
+    width: 60%;
+    min-width: 70rem;
+    background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.8) 40%,
+      rgba($color-white, 0.3) 40%
+    );
+
+    @include media-max(700px) {
+      background-image: linear-gradient(
+        105deg,
+        rgba($color-primary, 0.7) 40%,
+        rgba($color-primary, 0.7) 40%
+      );
+    }
+
+    @include media-max(700px) {
+      max-width: 100%;
+      width: 70rem;
+      min-width: auto;
+      height: fit-content;
+    }
+
+    @include media-max(700px) {
+      flex-direction: column;
+    }
+
+    &--left,
+    &--right {
+      width: 50%;
+      position: relative;
+
+      @include media-max(700px) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    &--title {
+      font-size: 3.5rem;
+      padding: 5rem;
+
+      @include media-max(700px) {
+        padding-bottom: 2rem;
+      }
+    }
+
+    &--input-name,
+    &--input-email {
+      padding: 1rem;
+      margin: 2rem;
+      font-size: 2rem;
+      font-family: "Staatliches", cursive;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid $color-black;
+
+      &::placeholder {
+        color: $color-black;
+
+        @include media-max(700px) {
+          padding-left: 3rem;
+        }
+      }
+
+      @include media-max(700px) {
+        width: 100%;
+        margin: 2rem 0;
+        padding: 1rem 0;
+      }
+
+      &:focus {
+        outline: none;
+
+        &::placeholder {
+          visibility: hidden;
+        }
+      }
+
+      &:focus + .contact__card--input-label {
+        top: -1rem;
+        visibility: visible;
+      }
+    }
+
+    &--input-container {
+      position: relative;
+      margin-left: 2rem;
+
+      @include media-max(700px) {
+        width: 80%;
+        margin: auto;
+      }
+    }
+
+    &--input-label {
+      position: absolute;
+      top: 3rem;
+      left: 3rem;
+      font-size: 2rem;
+      color: darken($color-primary, 20%);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    &--input-message {
+      font-size: 2rem;
+      font-family: "Staatliches", cursive;
+      background-color: rgba($color-primary, 0.6);
+      position: absolute;
+      top: 45%;
+      //   left: 40%;
+      transform: translateY(-50%);
+      max-width: 96%;
+      resize: none;
+
+      @include media-max(700px) {
+        position: relative;
+        top: auto;
+        transform: none;
+        margin: 4rem auto 2rem;
+        max-width: 80%;
+        display: block;
+      }
+
+      &::placeholder {
+        color: $color-black;
+      }
+
+      &:focus {
+        outline: none;
+
+        &::placeholder {
+          color: darken($color-primary, 20%);
+        }
+      }
+    }
+
+    &--submit {
+      @include button;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      @include media-max(700px) {
+        position: relative;
+      }
+    }
+  }
+}

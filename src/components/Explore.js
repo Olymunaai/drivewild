@@ -45,23 +45,26 @@ const Explore = () => {
         <section className="explore" id="explore">
             <div className="explore__clip-path"></div>
                 <h2 className="explore__title section__title">Select from a range of packages</h2>
-            <div className="explore__container">
+                <div className="explore__container">
 
                 {tours.map(tour => (
                 <div className="explore__container--card" key={tour.id} style={{backgroundImage: `linear-gradient(to bottom right, ${tour.color1} 25%, ${tour.color2})`}}>
                     <img src={tour.img} className="explore__container--card-image" alt="tour"/>
                     <h3 className="explore__container--card-title">{tour.title}</h3>
+                    <div className="explore__container--card-content">
                     <ul className="explore__container--card-list">
                         {tour.perks.map(perk => (
                         <li className="explore__container--card-item" key={perk}>{perk}</li>
                         ))}
                     </ul>
                     <a href="#popup" className="explore__container--card-button" onClick={e => openPopup(tour)}>Learn more</a>
+                    </div>
                 </div>
                 ))}
             </div>
+            {/* POPUP */}
             {popupInfo && <div className="explore__popup" id="popup" key={popupInfo.id}>
-                <div className="explore__popup--container">
+                <div className="explore__popup--container" style={{backgroundImage: `linear-gradient(to bottom right, ${popupInfo.color1} 25%, ${popupInfo.color2})`}}>
                     <a href="#explore" className="explore__popup--close">&times;</a>
                 <div className="explore__popup--left">
                     <img src={popupInfo.img} className="explore__popup--image" alt="tour"/>

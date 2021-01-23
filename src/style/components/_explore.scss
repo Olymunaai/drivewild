@@ -4,13 +4,6 @@
 .explore {
   width: 100%;
   height: fit-content;
-  //   background-color: $color-black;
-  //   clip-path: polygon(
-  //     0 15rem,
-  //     100% 0,
-  //     100% 100%,
-  //     0 100%
-  //   );
   margin-top: -15rem;
   text-align: center;
   position: relative;
@@ -41,28 +34,80 @@
     padding-bottom: 10rem;
     display: flex;
     margin: auto;
+    height: fit-content;
     width: fit-content;
+
+    @include media-max(1200px) {
+      width: 100%;
+    }
+
+    @include media-max(750px) {
+      flex-direction: column;
+    }
+
     &--card {
       overflow: hidden;
       width: 35rem;
-      height: fit-content;
       background-color: $color-primary;
       border-radius: 0.5rem;
       color: $color-black;
       margin: 2rem;
-      //   background-image: linear-gradient(
-      //     to bottom right,
-      //     #a6683c 25%,
-      //     #b49896
-      //   );
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      @include media-max(1200px) {
+        width: 33%;
+        margin: 1rem;
+      }
+
+      @include media-max(750px) {
+        // flex-direction: row;
+        width: 85%;
+        max-width: 70rem;
+        align-items: center;
+        margin: 2rem auto;
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1 0 auto;
+        @include media-max(750px) {
+          z-index: 0;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.02);
+      }
 
       &-image {
         width: 100%;
+
+        @include media-max(750px) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          filter: opacity(0.4);
+        }
       }
 
       &-title {
         font-size: 3rem;
         padding: 1.5rem;
+
+        @include media-max(750px) {
+          font-size: 6rem;
+          z-index: 0;
+        }
+
+        @include media-max(450px) {
+          font-size: 4.5rem;
+        }
       }
 
       &-list {
@@ -78,6 +123,14 @@
         &:not(:last-child) {
           border-bottom: 1px solid $color-black;
         }
+
+        @include media-max(750px) {
+          font-size: 3rem;
+          width: 100%;
+        }
+        @include media-max(450px) {
+          font-size: 2.5rem;
+        }
       }
 
       &-button:link,
@@ -90,6 +143,11 @@
         color: $color-primary;
         font-size: 2.5rem;
         border-radius: 0.5rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: scale(1.03);
+        }
       }
     }
   }
@@ -132,9 +190,9 @@
     }
 
     &--container {
-      height: 40rem;
-      width: 60%;
-      background-color: $color-white;
+      height: fit-content;
+      width: 90%;
+      max-width: 100rem;
       display: flex;
       align-items: center;
       position: absolute;
@@ -144,6 +202,10 @@
       transition: all 0.3s ease;
       box-shadow: 0 2rem 3rem
         rgba($color-black, 0.4);
+
+      @include media-max(700px) {
+        flex-direction: column;
+      }
     }
 
     &--left,

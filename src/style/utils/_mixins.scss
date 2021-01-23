@@ -4,3 +4,27 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin button {
+  padding: 1.5rem;
+  background-color: $color-black;
+  margin: 2rem;
+  display: inline-block;
+  text-decoration: none;
+  color: $color-primary;
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+@mixin media-max($pixels) {
+  @media (max-width: $pixels) {
+    @content;
+  }
+}
+
+@mixin media-min($pixels) {
+  @media (min-width: $pixels) {
+    @content;
+  }
+}

@@ -2,4 +2,13 @@
   font-size: 8rem;
   margin: auto;
   padding: 3rem;
+  text-align: center;
+
+  @include media-max(800px) {
+    font-size: 6rem;
+  }
+
+  @include media-max(700px) {
+    padding-bottom: 1.5rem;
+  }
 }

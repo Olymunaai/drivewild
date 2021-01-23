@@ -8,6 +8,10 @@
   position: relative;
   overflow: hidden;
 
+  @include media-max(900px) {
+    height: 55vh;
+  }
+
   &__image {
     position: absolute;
     height: 100%;
@@ -23,16 +27,34 @@
     width: fit-content;
 
     @include center-element;
+
+    @include media-max(900px) {
+      width: 65rem;
+      transform: translate(0, -50%);
+      left: auto;
+      right: 5rem;
+    }
+
+    @include media-max(600px) {
+      width: 90%;
+      max-width: 45rem;
+      right: 2rem;
+    }
   }
 
   &__title {
     font-size: 10rem;
-    text-transform: uppercase;
     color: $color-primary;
+
+    @include media-max(900px) {
+      text-align: right;
+    }
+    @include media-max(600px) {
+      font-size: 8rem;
+    }
 
     &--sub {
       font-size: 4rem;
-      text-transform: uppercase;
       color: $color-primary;
       text-align: right;
     }

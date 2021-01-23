@@ -17,8 +17,15 @@
     display: flex;
     align-items: center;
     width: 70%;
+    min-width: 90rem;
     margin: auto;
     padding: 1rem 0 17rem;
+
+    @include media-max(800px) {
+      width: 80%;
+      min-width: auto;
+      flex-direction: column;
+    }
 
     &--image {
       height: 30rem;
@@ -37,6 +44,10 @@
     &--text {
       font-size: 2rem;
       padding-left: 3rem;
+      @include media-max(800px) {
+        margin-top: 3rem;
+        padding-left: 0;
+      }
     }
   }
 }

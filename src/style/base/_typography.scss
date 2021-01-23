@@ -4,4 +4,20 @@
 html {
   font-size: 62.5%;
   font-family: "Staatliches", cursive;
+
+  @include media-max(1200px) {
+    font-size: 56.25%;
+  }
+  @include media-max(900px) {
+    font-size: 50%;
+  }
+  @include media-max(600px) {
+    font-size: 43.75%;
+  }
+  @include media-min(1900px) {
+    font-size: 68.75%;
+  }
+  @include media-min(2400px) {
+    font-size: 75%;
+  }
 }
