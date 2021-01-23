@@ -103,13 +103,13 @@
         outline: none;
 
         &::placeholder {
-          visibility: hidden;
+          // visibility: hidden;
+          color: $color-primary;
         }
-      }
 
-      &:focus + .contact__card--input-label {
-        top: -1rem;
-        visibility: visible;
+        // &:focus + .contact__card--input-label {
+        //   top: -1rem;
+        //   visibility: visible;
       }
     }
 
