@@ -15,6 +15,9 @@
   font-size: 2.5rem;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 @mixin media-max($pixels) {
